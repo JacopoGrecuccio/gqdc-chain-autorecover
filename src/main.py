@@ -72,6 +72,7 @@ def main():
             if (lastBlock["timestamp"]+CHAINDATA_STALE_TIME_SECS)<int(time.time()):
                 # Chain is stale, we need to remove the chaindata and force
                 # a resynch a the next node start-up
+                logger.warning("Chaindata is stale, trying to recover")
                 os.system(GQDC_STOP_COMMAND)
                 os.system("rm {}".format(GQDC_CHAINDATA_PATH))
                 os.system(GQDC_START_COMMAND)
