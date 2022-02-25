@@ -62,7 +62,7 @@ logger = logging.getLogger("GQDCChainAutoRecov")
 def main():
     logger.info("Started")
     # Connect to gqdc using IPC port
-    w3 = Web3(Web3.HTTPProvider("http:127.0.0.1:8545"))
+    w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
     if w3.isConnected():
         # Node is connected and correctly running
