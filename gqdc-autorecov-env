@@ -1,5 +1,5 @@
-export WEB3_IPC_PROVIDER="/home/quadrans/.quadrans/gqdc.ipc"
-export CHAINDATA_STALE_TIME_SECS=(5*60*60) # Default is 5 hours
+export WEB3_RPC_PROVIDER="http://127.0.0.1:8545"
+export CHAINDATA_STALE_TIME_SECS=18000 # Default is 5 hours
 export GQDC_START_COMMAND="systemctl start quadrans-node"
 export GQDC_STOP_COMMAND="systemctl stop quadrans-node"
 export GQDC_CHAINDATA_PATH="/home/quadrans/.quadrans/chaindata/*"

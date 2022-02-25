@@ -10,12 +10,12 @@ from web3.middleware import geth_poa_middleware
 
 
 try:
-    if os.environ["WEB3_IPC_PROVIDER"]!="":
-        WEB3_IPC_PROVIDER=os.environ["WEB3_IPC_PROVIDER"]
+    if os.environ["WEB3_RPC_PROVIDER"]!="":
+        WEB3_RPC_PROVIDER=os.environ["WEB3_RPC_PROVIDER"]
     else:
-        WEB3_IPC_PROVIDER="/home/quadrans/.quadrans/gqdc.ipc"
+        WEB3_RPC_PROVIDER="http://127.0.0.1:8545"
 except KeyError:
-    WEB3_IPC_PROVIDER="/home/quadrans/.quadrans/gqdc.ipc"
+    WEB3_RPC_PROVIDER="http://127.0.0.1:8545"
     pass
 
 try:
@@ -62,7 +62,7 @@ logger = logging.getLogger("GQDCChainAutoRecov")
 def main():
     logger.info("Started")
     # Connect to gqdc using IPC port
-    w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
+    w3 = Web3(Web3.HTTPProvider(WEB3_RPC_PROVIDER))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
     if w3.isConnected():
         # Node is connected and correctly running
