@@ -1,5 +1,7 @@
 #!/usr/bin/bash
-source venv/bin/activate
-source gqdc-autorecov-env
-python3 ./src/main.py
+INSTALL_PATH=/home/quadrans/gqdc-chain-autorecov
+
+source ${INSTALL_PATH}/venv/bin/activate
+source ${INSTALL_PATH}/gqdc-autorecov-env
+python3 ${INSTALL_PATH}/src/main.py
 deactivate
