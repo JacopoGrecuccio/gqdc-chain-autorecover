@@ -3,7 +3,7 @@ import logging
 import os
 import time
 from web3 import Web3
-
+from web3.middleware import geth_poa_middleware
 # ------------------------------------------------------------------------------
 # Configurable parameters, use the environment file to set their value
 # ------------------------------------------------------------------------------
@@ -62,7 +62,8 @@ logger = logging.getLogger("GQDCChainAutoRecov")
 def main():
     logger.info("Started")
     # Connect to gqdc using IPC port
-    w3 = Web3(Web3.IPCProvider(WEB3_IPC_PROVIDER))
+    w3 = Web3(Web3.HTTPProvider("http:127.0.0.1:8545"))
+    w3.middleware_onion.inject(geth_poa_middleware, layer=0)
     if w3.isConnected():
         # Node is connected and correctly running
         if w3.eth.syncing!=False:

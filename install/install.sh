@@ -28,5 +28,5 @@ cp ../run.sh ${INSTALL_PATH}
 cp ../gqdc-autorecov-env ${INSTALL_PATH}
 cp ../src/main.py ${INSTALL_PATH}/src
 
-echo "Installation completed. Run ${INSTALL_PATH}/run.sh to start the chain
+echo "Installation completed. Run $INSTALL_PATH/run.sh to start the chain
 auto-recover script or add it to your crontab for better automation"
