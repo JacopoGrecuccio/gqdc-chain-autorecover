@@ -49,9 +49,9 @@ try:
     if os.environ["GQDC_CHAINDATA_PATH"]!="":
         GQDC_CHAINDATA_PATH=os.environ["GQDC_CHAINDATA_PATH"]
     else:
-        GQDC_CHAINDATA_PATH="/home/quadrans/.quadrans/chaindata/*"
+        GQDC_CHAINDATA_PATH="/home/quadrans/.quadrans/gqdc/chaindata/*"
 except KeyError:
-    GQDC_CHAINDATA_PATH="/home/quadrans/.quadrans/chaindata/*"
+    GQDC_CHAINDATA_PATH="/home/quadrans/.quadrans/gqdc/chaindata/*"
     pass
 
 # ------------------------------------------------------------------------------
