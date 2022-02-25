@@ -66,7 +66,7 @@ def main():
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
     if w3.isConnected():
         # Node is connected and correctly running
-        if w3.eth.syncing!=False:
+        if w3.eth.syncing==False:
             # Node is not syncing
             lastBlock = w3.eth.get_block('latest')
             if (lastBlock["timestamp"]+CHAINDATA_STALE_TIME_SECS)<int(time.time()):
