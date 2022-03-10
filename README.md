@@ -10,8 +10,7 @@ The tools requires:
 
 which can be installed by running:
 ```
-sudo apt-get install python3
-sudo apt-get install python3-pip
+sudo apt install python3 python3-pip python3-dev
 pip3 install virtualenv  
 ```
 In addition, the gqdc client has to be already installed. It is suggested to do this operation  following the instructions provided by Quadrans' official documentation available [here](https://docs.quadrans.io/nodes/)
